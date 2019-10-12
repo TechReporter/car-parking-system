@@ -1,24 +1,93 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.hexad</groupId>
-	<artifactId>Car-parking-system</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
-	<description>A car parking lot ticket registration system</description>
-
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<java.version>1.8</java.version>
-	</properties>
-
-	<dependencies>
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>4.12</version>
-		</dependency>
-	</dependencies>
-</project>
+#include<stdio.h>
+#include<conio.h>
+int menu();
+void delete();
+void showdetail();
+void suvcar();
+void compactcar();
+void subcompactcar();
+	
+int a=0,b=0,c=0,amount=0,count=0;
+void main()
+	{
+	 while(1)
+	{
+	 clrscr();
+	 switch(menu())
+	{
+	  case 1:
+	           suvcar();
+	           break;
+	  case 2:
+	           compactcar();
+	           break;
+	  case 3:
+	           subcompactcar();
+	           break;
+	  case 4:
+	          showdetail();
+	          break;
+	  case 5:
+	         delete();
+	         break;
+	  case 6:
+	         exit(0);
+	  default:
+	           printf("Invalid Choice");
+	}
+	
+	 getch();
+	}
+	}
+	int menu()
+	{
+	 int e;
+	 printf("\n1. enter suv car");
+	 printf("\n2. enter compact car");
+	 printf("\n3. enter subcompact car");
+	 printf("\n4. show detail");
+	 printf("\n5. delete details");
+	 printf("\n6. Exit");
+	 printf("\n\nEnter your choice");
+	 scanf("%d",&e);
+	 return(e);
+ 	}
+	void delete()
+	{
+	 a=0;
+	 b=0;
+	 c=0;
+	 amount=0;
+	 count=0;
+	}
+	void showdetail()
+	{
+	 printf("\nnumber of suv car:",a);
+	 printf("\nnumber of compact car:",b);
+	 printf("\nnumber of subcompact car:",c);
+	 printf("\nTotal no. of cars:",a+b+c);
+	 printf("\nTotal gain amount=%d",count);
+	}
+	   
+void suvcar()
+	{
+	 printf("Entry successful");
+	 a++;
+	 amount+=100;
+	 count++;
+	}
+void compactcar()
+	{
+	 printf("Entry successful");
+	 b++;
+	 amount+=50;
+	 count++;
+	}
+void subcompactcar()
+	{ 
+	 printf("Entry successful");
+	 c++;
+	 amount+=25;
+	 count++;
+	}
+		
